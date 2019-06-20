@@ -5,11 +5,5 @@
       {{hero.name}} </a>
 </mat-nav-list>
 
-<div *ngIf="selectedHero">
-<h2>{{selectedHero.name|uppercase}} Details: </h2>
-<p> Id:  {{ selectedHero.id }} </p>
-<label for="name">Name </label>
-<mat-form-field class="example-full-width">
-    <input matInput name="name" id="name" [(ngModel)]="selectedHero.name">
-</mat-form-field>
-</div>
+
+<hero-details [hero] ='selectedHero' ></hero-details>
