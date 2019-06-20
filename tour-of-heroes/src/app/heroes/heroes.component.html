@@ -1,5 +1,15 @@
-<h2>Hero Details: </h2>
-<p> Id:  {{ hero.id }} </p>
-<label for="name"></label>
-<input type="text" name="name" id="name" value="{{hero.name}}" [(ngModel)]="hero.name">
-{{hero.name}}
+<h1>Hero List</h1>
+<mat-nav-list>
+  <a mat-list-item *ngFor="let hero of heroes" (click)=details(hero)> {{ link }} 
+      <button mat-button color="primary">{{hero.id}}</button>
+      {{hero.name}} </a>
+</mat-nav-list>
+
+<div *ngIf="selectedHero">
+<h2>{{selectedHero.name|uppercase}} Details: </h2>
+<p> Id:  {{ selectedHero.id }} </p>
+<label for="name">Name </label>
+<mat-form-field class="example-full-width">
+    <input matInput name="name" id="name" [(ngModel)]="selectedHero.name">
+</mat-form-field>
+</div>
