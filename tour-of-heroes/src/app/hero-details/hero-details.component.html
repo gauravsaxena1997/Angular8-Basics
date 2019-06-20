@@ -1,8 +1,7 @@
 <div *ngIf="hero">
     <h2>{{hero.name|uppercase}} Details: </h2>
     <p> Id:  {{ hero.id }} </p>
-    <label for="name">Name </label>
     <mat-form-field class="example-full-width">
-        <input matInput name="name" id="name" [(ngModel)]="hero.name">
+        <input matInput name="name" placeholder="Name" id="name" [(ngModel)]="hero.name">
     </mat-form-field>
 </div>
