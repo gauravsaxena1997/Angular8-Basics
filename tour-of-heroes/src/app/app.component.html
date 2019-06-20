@@ -5,6 +5,10 @@
   </h1>
 </div>
 
-<heroes></heroes>
+<button mat-flat-button color="primary" class="mr-3" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Dashboard</button>
+<button mat-flat-button color="primary" [routerLink]="['/heroes']" routerLinkActive="router-link-active" >Heroes</button>
 
-<messages></messages>
+<router-outlet></router-outlet>
+
+
+<!-- <messages></messages> -->
