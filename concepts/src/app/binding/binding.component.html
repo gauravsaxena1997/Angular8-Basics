@@ -1,1 +1,23 @@
 <h1 [textContent]='headerValue'></h1>
+<table [style.width.%]='"100"'>
+    <thead>
+        <tr [ngStyle]="settheadStyles()">
+            <th>Position</th>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Symbol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr [ngClass]="{'elements-font elements-size':true }" 
+        *ngFor="let row of table_row;let i = index" [class.evenChild]="(i+1)%2==0?true:false" >  
+            <td>{{row.position}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.weight}}</td>
+            <td>{{row.symbol}}</td>
+        </tr>
+    </tbody>
+</table>
+ <p><b>Interpolation: </b>There are {{table_row.length}} rows in the table.</p> 
+ <p><b>Property binding: </b><span [innerHTML]="nineth_index.name"></span> is the 8th element.</p>
+ <b>Event Binding: </b> <button type="button" (mouseover)="getFirstElement()">First element is:</button>

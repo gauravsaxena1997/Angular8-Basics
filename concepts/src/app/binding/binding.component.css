@@ -1,0 +1,21 @@
+.header {
+    text-align: center;
+    color: blueviolet
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+td{
+    text-align: left
+}
+.evenChild {
+    background-color: beige;
+}
+.elements-font{
+    font-family: 'Montserrat', sans-serif;
+}
+.elements-size{
+    font-size: 18px
+}
