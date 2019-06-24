@@ -10,6 +10,7 @@ import { BindingComponent } from './binding/binding.component';
 import { ChildComponent } from './child/child.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-hooks-child.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
     BindingComponent,
     ChildComponent,
     UserInputComponent,
-    LifecycleHooksComponent
+    LifecycleHooksComponent,
+    LifecycleHooksChildComponent
   ],
   imports: [
     BrowserModule,
