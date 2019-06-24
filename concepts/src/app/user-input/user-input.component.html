@@ -1,2 +1,24 @@
 <h3>Binding to user Input events</h3>
-<button (click)="count()">Click me </button> {{clickCount}}
+<button (click)="count()">Click me </button> 
+<span *ngIf="clickCount>0"> Click count is {{clickCount}}. </span>
+<br>
+<h3>User input from <b>$event</b> object</h3>
+<input type="text" (keyup)="onkeyup($event)"> 
+<span> Note: All standard DOM event objects have a target property, a reference to the element that raised the event. </span> <br>
+{{values}}
+<br>
+<h3>Type the <b>$event</b></h3>
+<input type="text" (keyup)="onkeyup2($event)"> <br>
+{{values2}}
+<br>
+<h3><b>Note:</b> Passing $event is a dubious practice</h3>
+<h2>User input from template reference variable</h2>
+<input type="text" #inp (keyup)="0">    <!-- Bind a keyup event -->
+<p>{{inp.value}}</p>
+<hr>
+<h3>Key filtering (key.enter)</h3>
+<input type="text" #inpt (keyup.enter)="toUpper(inpt.value)">  <br>
+<p> {{upper}} </p>
+<h3>On blur</h3>
+<input type="text" #input (blur)="getval(input.value);input.value=''">  <br>
+<p> {{val}} </p> <br>
