@@ -1,8 +1,15 @@
 <button mat-stroked-button color="primary" (click)="toggleChild()" [style.margin.px]="15">{{ hasChild?'Destroy':'Create' }} the component</button>
 <button mat-stroked-button color="primary" (click)="updateHero()" [style.margin.px]="15">Update hero</button>
-
+<br>
+<mat-radio-group aria-label="Select an option">
+    <mat-radio-button name="colors" value="cyan" (click)="color='cyan'">Cyan</mat-radio-button>
+    <mat-radio-button name="colors" value="lightgreen" (click)="color='lightgreen'">Lightgreen</mat-radio-button>
+    <mat-radio-button name="colors" value="lightblue" (click)="color='Lightblue'">lightblue</mat-radio-button>
+  </mat-radio-group>
 
 <app-lifecycle-hooks-child *ngIf="hasChild" [name]="heroName" ></app-lifecycle-hooks-child>
 
 <h4>-- Lifecycle Hook Log --</h4>
-<div *ngFor="let msg of hookLog">{{msg}}</div>
+<div *ngFor="let msg of hookLog">
+ <p [appHighlight]='color' defaultColor="violet">  {{msg}} </p> 
+</div>
