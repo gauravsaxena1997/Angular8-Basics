@@ -31,6 +31,7 @@ export class BindingComponent implements OnInit {
   nineth_index:PeriodicElement = this.table_row[7];
   firstElement:string = '';
   fontSize:number = 18;
+  selectedElement:object = {};
   constructor() { }
 
   settheadStyles(): {}{
@@ -50,6 +51,9 @@ export class BindingComponent implements OnInit {
   }
   dec():void{
     this.fontSize--;
+  }
+  getElement(element:object):void{
+    this.selectedElement = element;
   }
   ngOnInit() {
   }

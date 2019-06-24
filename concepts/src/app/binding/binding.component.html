@@ -15,7 +15,9 @@
     <tbody>
         <tr [ngClass]="{'elements-font elements-size':true}"
             [style.fontSize.px]='fontSize==""?18:fontSize'
-            *ngFor="let row of table_row;let i = index" [class.evenChild]="(i+1)%2==0?true:false" >  
+            [style.cursor]="'pointer'"
+            *ngFor="let row of table_row;let i = index" [class.evenChild]="(i+1)%2==0?true:false"
+            (click)="getElement(row)">
             <td>{{row.position}}</td>
             <td>{{row.name}}</td>
             <td>{{row.weight}}</td>
@@ -26,3 +28,6 @@
  <p><b>Interpolation: </b>There are {{table_row.length}} rows in the table.</p> 
  <p><b>Property binding: </b><span [innerHTML]="nineth_index.name"></span> is the 8th element.</p>
  <b>Event Binding: </b> <button type="button" (mouseover)="getFirstElement()">First element is:</button>
+
+
+ <app-child [element]="selectedElement"></app-child>
