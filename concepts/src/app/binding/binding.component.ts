@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2} from '@angular/core';
 
 export interface PeriodicElement {
   name: string;
@@ -32,7 +32,8 @@ export class BindingComponent implements OnInit {
   firstElement:string = '';
   fontSize:number = 18;
   selectedElement:object = {};
-  constructor() { }
+  newElement:string[] = [];
+  constructor( private ren:Renderer2) { }
 
   settheadStyles(): {}{
     let theadStyles = {
@@ -54,6 +55,15 @@ export class BindingComponent implements OnInit {
   }
   getElement(element:object):void{
     this.selectedElement = element;
+  }
+  addNew(ele:string):void{
+    let new_row:PeriodicElement = {
+      name: ele,
+      position: null,
+      weight: null,
+      symbol: ''
+    }
+    this.table_row.push(new_row);
   }
   ngOnInit() {
   }

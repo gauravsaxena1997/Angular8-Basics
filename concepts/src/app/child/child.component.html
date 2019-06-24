@@ -1,5 +1,6 @@
 <div *ngIf="element.name">
-  <h3>
+    <p><b>Data from a child component:</b></p>
+    <h3>
     {{element.symbol}} : {{element.name}}
   </h3>
   <div *ngIf="element.symbol=='H'">
@@ -10,3 +11,7 @@
     <br>  In 1931, Harold Urey and his colleagues at Columbia University in the US detected a second, rarer, form of hydrogen. This has twice the mass of normal hydrogen, and they named it deuterium.</p>
   </div>
 </div>
+
+<h2>Add new element</h2>
+<label for="new"></label><input type="text" #newElement>
+<input type="button" value="Add Element" (click)="addNewElement(newElement.value)">

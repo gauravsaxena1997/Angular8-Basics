@@ -12,7 +12,7 @@
             <th>Symbol</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody #newrow>
         <tr [ngClass]="{'elements-font elements-size':true}"
             [style.fontSize.px]='fontSize==""?18:fontSize'
             [style.cursor]="'pointer'"
@@ -27,7 +27,15 @@
 </table>
  <p><b>Interpolation: </b>There are {{table_row.length}} rows in the table.</p> 
  <p><b>Property binding: </b><span [innerHTML]="nineth_index.name"></span> is the 8th element.</p>
- <b>Event Binding: </b> <button type="button" (mouseover)="getFirstElement()">First element is:</button>
+ <b>Event Binding: </b> <button type="button" (click)="getFirstElement()">First element is:</button>
 
+<hr>
 
- <app-child [element]="selectedElement"></app-child>
+ <app-child [element]="selectedElement" (newElement)="addNew($event)"  ></app-child>
+
+ <h3>New Elements</h3>
+ <ul>
+     <li *ngFor="let ele of newElement">
+         {{ele}}
+     </li>
+ </ul>
