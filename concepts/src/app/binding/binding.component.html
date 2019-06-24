@@ -1,4 +1,8 @@
 <h1 [textContent]='headerValue'></h1>
+<label for="fontSize">Change font size (default 18px) </label> 
+<input type="text" name="fontSize" [(ngModel)]="fontSize">
+<input type="button" value="+" on-click='inc()'>
+<input type="button" value="-" on-click='dec()'><br><br>
 <table [style.width.%]='"100"'>
     <thead>
         <tr [ngStyle]="settheadStyles()">
@@ -9,8 +13,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr [ngClass]="{'elements-font elements-size':true }" 
-        *ngFor="let row of table_row;let i = index" [class.evenChild]="(i+1)%2==0?true:false" >  
+        <tr [ngClass]="{'elements-font elements-size':true}"
+            [style.fontSize.px]='fontSize==""?18:fontSize'
+            *ngFor="let row of table_row;let i = index" [class.evenChild]="(i+1)%2==0?true:false" >  
             <td>{{row.position}}</td>
             <td>{{row.name}}</td>
             <td>{{row.weight}}</td>
