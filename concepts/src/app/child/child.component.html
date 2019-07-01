@@ -1,4 +1,5 @@
-<div *ngIf="element.name">
+<div class="container">
+  <div *ngIf="element.name">
     <p><b>Data from a child component:</b></p>
     <h3>
     {{element.symbol}} : {{element.name}}
@@ -15,3 +16,4 @@
 <h2>Add new element</h2>
 <label for="new"></label><input type="text" #newElement>
 <input type="button" value="Add Element" (click)="addNewElement(newElement.value)">
+</div>

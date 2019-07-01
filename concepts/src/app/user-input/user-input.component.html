@@ -1,5 +1,6 @@
+<div class="container">
 <h3>Binding to user Input events</h3>
-<button (click)="count()">Click me </button> 
+<button mat-fab color="primary" (click)="count()">Click</button>
 <span *ngIf="clickCount>0"> Click count is {{clickCount}}. </span>
 <br>
 <h3>User input from <b>$event</b> object</h3>
@@ -22,3 +23,4 @@
 <h3>On blur</h3>
 <input type="text" #input (blur)="getval(input.value);input.value=''">  <br>
 <p> {{val}} </p> <br>
+</div>

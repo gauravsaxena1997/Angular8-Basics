@@ -1,3 +1,4 @@
+<div class="container">
 <button mat-stroked-button color="primary" (click)="toggleChild()" [style.margin.px]="15">{{ hasChild?'Destroy':'Create' }} the component</button>
 <button mat-stroked-button color="primary" (click)="updateHero()" [style.margin.px]="15">Update hero</button>
 <br>
@@ -7,4 +8,5 @@
 <h4>-- Lifecycle Hook Log --</h4>
 <div *ngFor="let msg of hookLog">
  <p>  {{msg}} </p> 
+</div>
 </div>

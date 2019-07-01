@@ -5,6 +5,7 @@ import {UserInputComponent} from './user-input/user-input.component';
 import {LifecycleHooksComponent} from './lifecycle-hooks/lifecycle-hooks.component';
 import {CustomDirectivesComponent} from './custom-directives/custom-directives.component';
 import {PipesComponent} from './pipes/pipes.component';
+import {FormsComponent} from './forms/forms.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},
@@ -12,8 +13,8 @@ const routes: Routes = [
   {path:'userinput',component:UserInputComponent},
   {path:'lifecyclehooks',component:LifecycleHooksComponent},
   {path:'customdirectives',component:CustomDirectivesComponent},
-  {path:'pipes',component:PipesComponent}
-
+  {path:'pipes',component:PipesComponent},
+  {path:'forms',component:FormsComponent}
 ];
 
 @NgModule({

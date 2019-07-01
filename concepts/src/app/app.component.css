@@ -1,0 +1,7 @@
+.nav-links {
+    padding: 16px 10px;
+    transition-duration: 0.8s;
+}
+.nav-links:hover {
+    font-size: 108%;
+}

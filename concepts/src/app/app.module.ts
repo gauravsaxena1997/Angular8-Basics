@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { UnlessDirective } from './directives/unless.directive';
 import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ExponentialPipe } from './pipes/exponential.pipe';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,15 @@ import { ExponentialPipe } from './pipes/exponential.pipe';
     UnlessDirective,
     CustomDirectivesComponent,
     PipesComponent,
-    ExponentialPipe
+    ExponentialPipe,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   providers: [],
