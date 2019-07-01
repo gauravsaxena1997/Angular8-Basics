@@ -25,6 +25,25 @@ export class FormsComponent {
   }
   onSubmit():void {
     console.warn(this.profileForm.value);
-    
+  }
+  setReqFields():void {
+    this.profileForm.patchValue({
+      firstName: 'Gaurav',
+      address: {
+        city: 'Jaipur'
+      }
+    });
+  }
+  setAllFields():void {
+    this.profileForm.setValue({
+      firstName: 'Gaurav',
+      lastName: 'Saxena',
+      address:{
+        houseNo: '487',
+        street: 'Gangapol',
+        city: 'Jaipur',
+        pincode: '302002'
+    }
+    });
   }
 }
