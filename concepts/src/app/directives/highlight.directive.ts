@@ -18,5 +18,4 @@ export class HighlightDirective {
   highlight(color:string){
     this.ele.nativeElement.style.backgroundColor=color;
   }
-
 }

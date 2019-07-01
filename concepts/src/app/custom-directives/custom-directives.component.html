@@ -1,0 +1,13 @@
+<h2>Custom attribute directive</h2>
+<div [style.margin.px]="10">
+  <p>Select a color of highlight (Default: Violet)</p>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button name="colors" value="cyan" [style.padding.px]="10" (click)="color='cyan'">Cyan</mat-radio-button>
+    <mat-radio-button name="colors" value="lightgreen" [style.padding.px]="10" (click)="color='lightgreen'">Lightgreen</mat-radio-button>
+    <mat-radio-button name="colors" value="lightblue" (click)="color='Lightblue'">lightblue</mat-radio-button>
+  </mat-radio-group>  
+</div>
+
+<div [appHighlight]='color' defaultColor="violet" [ngStyle]="myStyles">
+    Hover to highlight (by custom attribute directive)
+</div>

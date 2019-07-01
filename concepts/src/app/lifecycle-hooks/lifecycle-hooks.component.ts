@@ -11,7 +11,6 @@ export class LifecycleHooksComponent implements OnInit {
   hasChild = false;
   hookLog:string[];
   heroName:string = 'Deadpool' ;
-  color:string = '';
   private logger: LifecyleHooksService;
   constructor( logger: LifecyleHooksService ) {
     this.logger = logger;

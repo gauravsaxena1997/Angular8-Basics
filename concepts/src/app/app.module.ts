@@ -12,6 +12,8 @@ import { UserInputComponent } from './user-input/user-input.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-hooks-child.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     UserInputComponent,
     LifecycleHooksComponent,
     LifecycleHooksChildComponent,
-    HighlightDirective
+    HighlightDirective,
+    UnlessDirective,
+    CustomDirectivesComponent
   ],
   imports: [
     BrowserModule,
