@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PipesComponent implements OnInit {
   today:Date = new Date();
   toggle:boolean = true;
+  baseValue:number;
+  power:number = 1;
   constructor() { }
 
   ngOnInit() {

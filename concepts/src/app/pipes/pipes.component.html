@@ -11,3 +11,12 @@
     <b>Parameterized pipe with template expression:</b> {{today | date:format}}
     <button mat-button color="primary" (click)="toggleFormat()">Toggle format</button>
 </p>
+
+<h3>Power Calculator</h3>
+<mat-form-field >
+  <input matInput [(ngModel)]="baseValue" placeholder="Base value" value="2">
+</mat-form-field>
+<mat-form-field [ngStyle]="{'margin-left':'25px'}">
+  <input matInput [(ngModel)]="power" placeholder="Power" value="1">
+</mat-form-field>
+<p>Result:  {{baseValue | exponential:power }} </p> 

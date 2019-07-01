@@ -15,6 +15,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ExponentialPipe } from './pipes/exponential.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PipesComponent } from './pipes/pipes.component';
     HighlightDirective,
     UnlessDirective,
     CustomDirectivesComponent,
-    PipesComponent
+    PipesComponent,
+    ExponentialPipe
   ],
   imports: [
     BrowserModule,
