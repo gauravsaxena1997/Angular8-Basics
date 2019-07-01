@@ -14,6 +14,7 @@ import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CustomDirectivesComponent } from './custom-directives/custom-directives
     LifecycleHooksChildComponent,
     HighlightDirective,
     UnlessDirective,
-    CustomDirectivesComponent
+    CustomDirectivesComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,

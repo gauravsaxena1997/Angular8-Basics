@@ -1,0 +1,13 @@
+<p>
+  <b>Without any pipe:</b> {{today}}
+</p>
+<p>
+    <b>With pipe:</b> {{today | date}}
+</p>
+<p>
+    <b>With parameterized pipe:</b> {{today | date:'dd/MM/yyyy'}}
+</p>
+<p>
+    <b>Parameterized pipe with template expression:</b> {{today | date:format}}
+    <button mat-button color="primary" (click)="toggleFormat()">Toggle format</button>
+</p>
