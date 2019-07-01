@@ -11,3 +11,19 @@
 <div [appHighlight]='color' defaultColor="violet" [ngStyle]="myStyles">
     Hover to highlight (by custom attribute directive)
 </div>
+<hr>
+
+<h2>Custom structural directive</h2>
+<button mat-flat-button color="accent" (click)="condition=!condition" >
+    Toggle condition to {{condition?'true':'false'}}
+  </button>
+<div [ngStyle]="myStyles" *appUnless="!condition">
+    This div is appear when the condition is false.
+</div>
+<!-- Another syntax -->
+<ng-template [appUnless]="condition">
+    <div [ngStyle]="myStyles">
+        This div is appear when the condition is true.
+    </div>
+</ng-template>
+
