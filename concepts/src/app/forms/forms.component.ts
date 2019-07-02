@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component} from '@angular/core';
+import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -9,22 +9,34 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class FormsComponent {
   name = new FormControl('');
   nameConstant:string = "Gaurav";
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormGroup({
-      houseNo: new FormControl(''),
-      street: new FormControl(''),
-      city: new FormControl(''),
-      pincode: new FormControl('')
-    })
+  // profileForm = new FormGroup({
+  //   firstName: new FormControl('',Validators.required),
+  //   lastName: new FormControl(''),
+  //   address: new FormGroup({
+  //     houseNo: new FormControl(''),
+  //     street: new FormControl(''),
+  //     city: new FormControl('',Validators.required),
+  //     pincode: new FormControl('')
+  //   })
+  // });
+
+  // With Form Builder
+  profileForm = this.fb.group({
+    firstName: ['',Validators.required],
+    lastName: [''],
+    address: this.fb.group({
+      houseNo: [''],
+      street: [''],
+      city: ['',Validators.required],
+      pincode: ['']
+    }),
+    hobbies: this.fb.array([
+      this.fb.control('')
+    ])
   });
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
   updateName():void {
     this.name.setValue(this.nameConstant);
-  }
-  onSubmit():void {
-    console.warn(this.profileForm.value);
   }
   setReqFields():void {
     this.profileForm.patchValue({
@@ -33,7 +45,7 @@ export class FormsComponent {
         city: 'Jaipur'
       }
     });
-  }
+  };
   setAllFields():void {
     this.profileForm.setValue({
       firstName: 'Gaurav',
@@ -43,7 +55,19 @@ export class FormsComponent {
         street: 'Gangapol',
         city: 'Jaipur',
         pincode: '302002'
-    }
+      },
+      hobbies: ['Sketching']
     });
+  };
+  onSubmit():void {
+    console.log(this.profileForm.value);
+    this.profileForm.reset;
+    
+  };
+  get hobbies() {
+    return this.profileForm.get('hobbies') as FormArray;
+  }
+  addHobbies() {
+    this.hobbies.push(this.fb.control(''));
   }
 }
