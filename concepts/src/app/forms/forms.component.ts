@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
+import {Hero} from './hero';
 
 @Component({
   selector: 'app-forms',
@@ -9,6 +10,9 @@ import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@ang
 export class FormsComponent {
   name = new FormControl('');
   nameConstant:string = "Gaurav";
+  isSubmitted: boolean = false;
+  superPowers:string[] = ['Can Fly','Super strength','Techy','Flexible','Invisible','Mystical arts'];
+  classes:string[] = ['Speed','Blast','Combat','Universal']
   // profileForm = new FormGroup({
   //   firstName: new FormControl('',Validators.required),
   //   lastName: new FormControl(''),
@@ -61,13 +65,16 @@ export class FormsComponent {
   };
   onSubmit():void {
     console.log(this.profileForm.value);
-    this.profileForm.reset;
-    
   };
   get hobbies() {
     return this.profileForm.get('hobbies') as FormArray;
   }
   addHobbies() {
     this.hobbies.push(this.fb.control(''));
+  }
+  // Template-driven forms
+  model = new Hero ('Hulk','Bruce Banner');
+  onsubmit2(){
+    this.isSubmitted = true;
   }
 }
