@@ -26,7 +26,7 @@ export class FormsComponent {
 
   // With Form Builder
   profileForm = this.fb.group({
-    firstName: ['',Validators.required],
+    firstName: ['',[Validators.required,Validators.minLength(4)]],
     lastName: [''],
     address: this.fb.group({
       houseNo: [''],

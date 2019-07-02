@@ -65,10 +65,13 @@
           <div *ngIf="!isSubmitted">
               <form #heroForm="ngForm" (ngSubmit)="onsubmit2()">
                   <p><mat-form-field>
-                    <input matInput #handle="ngModel" placeholder="Hero Handle" name="handle" [(ngModel)]="model.handle" [value]="model.handle" required>
+                    <input matInput #handle="ngModel" placeholder="Hero Handle" name="handle" 
+                           [(ngModel)]="model.handle" [value]="model.handle" required minlength="4">
                   </mat-form-field></p>
-                  <div [hidden]="handle.valid || handle.pristine" class="alert alert-danger">  
-                    Name is required.
+                  <div *ngIf="handle.invalid && (handle.dirty||handle.touched)" class="alert alert-danger">
+                      <div *ngIf="handle.errors.required"> Hero handle is required. </div>
+                      <div *ngIf="handle.errors.minlength"> Minimum length required is four. </div>
+                      <div *ngIf="handle.errors.forbiddenName"> Name can't be. </div>
                   </div>
                   <p><mat-form-field>
                     <input matInput placeholder="Hero Name" name="name" [(ngModel)]="model.name" [value]="model.name" required>
