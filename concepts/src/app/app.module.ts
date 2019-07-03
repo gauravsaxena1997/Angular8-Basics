@@ -31,6 +31,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 // Pipe
 import { ExponentialPipe } from './components/pipes/exponential.pipe';
+import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ExponentialPipe } from './components/pipes/exponential.pipe';
     CheckboxComponent,
     DynamicFieldDirective,
     CreateDynamicFormComponent,
-    DynamicReactiveFormComponent
+    DynamicReactiveFormComponent,
+    DynamicFormsComponent
   ],
   imports: [
     BrowserModule,

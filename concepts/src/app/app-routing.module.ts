@@ -6,6 +6,7 @@ import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-ho
 import {CustomDirectivesComponent} from './components/custom-directives/custom-directives.component';
 import {PipesComponent} from './components/pipes/pipes.component';
 import {FormsComponent} from './components/forms/forms.component';
+import {DynamicFormsComponent} from './components/dynamic-forms/dynamic-forms.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'lifecyclehooks',component:LifecycleHooksComponent},
   {path:'customdirectives',component:CustomDirectivesComponent},
   {path:'pipes',component:PipesComponent},
-  {path:'forms',component:FormsComponent}
+  {path:'forms',component:FormsComponent},
+  {path:'dynamicforms',component:DynamicFormsComponent}
 ];
 
 @NgModule({
