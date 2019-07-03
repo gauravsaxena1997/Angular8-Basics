@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
-  @Input() element:object;
+  @Input() element:any;
   @Output() newElement = new EventEmitter<string>();
   constructor(){}
   addNewElement(ele:string){

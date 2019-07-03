@@ -12,16 +12,20 @@
           <hr>
           <h2> From Group </h2>
           <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-            <mat-form-field appearance="outline">
-              <mat-label>First name</mat-label>
-              <input matInput formControlName="firstName" required>
+            Name: 
+            <mat-form-field class="gap">
+              <input matInput formControlName="firstName">
               <mat-hint>Enter your first name</mat-hint>
             </mat-form-field>
-            <mat-form-field appearance="outline" [ngStyle]="{marginLeft: '20px'}"> 
-              <mat-label>Last name</mat-label>
+            <mat-form-field  class="gap"> 
               <input matInput formControlName="lastName">
               <mat-hint>Enter your last name</mat-hint>
             </mat-form-field>
+            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+              <div class="alert alert-danger" *ngIf="firstName.errors.forbiddenName">Name can't be thor</div>
+              <div class="alert alert-danger" *ngIf="firstName.errors.required">Name is required.</div>
+              <div class="alert alert-danger" *ngIf="firstName.errors.minlength">Minimun length is three.</div>
+            </div>
             <div formGroupName="address" >
               Address:
               <mat-form-field appearance="standard" class="gap">
@@ -66,12 +70,12 @@
               <form #heroForm="ngForm" (ngSubmit)="onsubmit2()">
                   <p><mat-form-field>
                     <input matInput #handle="ngModel" placeholder="Hero Handle" name="handle" 
-                           [(ngModel)]="model.handle" [value]="model.handle" required minlength="4">
+                           [(ngModel)]="model.handle" [value]="model.handle" required minlength="4" appForbiddenName="thor">
                   </mat-form-field></p>
                   <div *ngIf="handle.invalid && (handle.dirty||handle.touched)" class="alert alert-danger">
                       <div *ngIf="handle.errors.required"> Hero handle is required. </div>
                       <div *ngIf="handle.errors.minlength"> Minimum length required is four. </div>
-                      <div *ngIf="handle.errors.forbiddenName"> Name can't be. </div>
+                      <div *ngIf="handle.errors.forbiddenName"> Handle can't be thor. </div>
                   </div>
                   <p><mat-form-field>
                     <input matInput placeholder="Hero Name" name="name" [(ngModel)]="model.name" [value]="model.name" required>
@@ -100,6 +104,9 @@
             <hr>
             <div class="btn btn-primary" (click)="isSubmitted=!isSubmitted" >Apply another job</div>
           </div>
+      </mat-tab>
+      <mat-tab label="Dynamic Forms">
+          <app-dynamic-reactive-form></app-dynamic-reactive-form>
       </mat-tab>
     </mat-tab-group>
 </div>

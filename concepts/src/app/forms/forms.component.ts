@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
 import {Hero} from './hero';
+import {forbiddenNameValidator} from '../directives/forbidden-name.directive';
 
 @Component({
   selector: 'app-forms',
@@ -26,7 +27,11 @@ export class FormsComponent {
 
   // With Form Builder
   profileForm = this.fb.group({
-    firstName: ['',[Validators.required,Validators.minLength(4)]],
+    firstName: ['',[
+          Validators.required,
+          Validators.minLength(3),
+          forbiddenNameValidator(/thor/i)
+        ]],
     lastName: [''],
     address: this.fb.group({
       houseNo: [''],
@@ -68,6 +73,9 @@ export class FormsComponent {
   };
   get hobbies() {
     return this.profileForm.get('hobbies') as FormArray;
+  }
+  get firstName() {
+    return this.profileForm.get('firstName') as FormControl;
   }
   addHobbies() {
     this.hobbies.push(this.fb.control(''));

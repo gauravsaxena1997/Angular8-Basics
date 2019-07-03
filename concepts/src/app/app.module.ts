@@ -17,6 +17,16 @@ import { CustomDirectivesComponent } from './custom-directives/custom-directives
 import { PipesComponent } from './pipes/pipes.component';
 import { ExponentialPipe } from './pipes/exponential.pipe';
 import { FormsComponent } from './forms/forms.component';
+import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
+import { InputComponent } from './components/input/input.component';
+import { ButtonComponent } from './components/button/button.component';
+import { SelectComponent } from './components/select/select.component';
+import { DateComponent } from './components/date/date.component';
+import { RadiobuttonComponent } from './components/radiobutton/radiobutton.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { DynamicReactiveFormComponent } from './dynamic-reactive-form/dynamic-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +41,17 @@ import { FormsComponent } from './forms/forms.component';
     CustomDirectivesComponent,
     PipesComponent,
     ExponentialPipe,
-    FormsComponent
+    FormsComponent,
+    ForbiddenNameDirective,
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    DateComponent,
+    RadiobuttonComponent,
+    CheckboxComponent,
+    DynamicFieldDirective,
+    DynamicFormComponent,
+    DynamicReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +60,14 @@ import { FormsComponent } from './forms/forms.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule
+  ],
+  entryComponents: [
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    DateComponent,
+    RadiobuttonComponent,
+    CheckboxComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

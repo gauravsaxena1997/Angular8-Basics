@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomDirectivesComponent implements OnInit {
   color:string = '';
+  condition:boolean;
   myStyles:any = {
     'padding': '20px',
     'font-size': '25px',
