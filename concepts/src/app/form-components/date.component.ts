@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { FieldConfig } from "../../forms/field.interface";
+import { FieldConfig } from "../components/forms/field.interface";
 @Component({
 selector: "app-date",
 template: `

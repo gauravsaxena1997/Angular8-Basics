@@ -2,13 +2,13 @@ import {
   ComponentFactoryResolver, ComponentRef, Directive, Input, OnInit, ViewContainerRef
 } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { FieldConfig } from "../../forms/field.interface";
-import { InputComponent } from "../input/input.component";
-import { ButtonComponent } from "../button/button.component";
-import { SelectComponent } from "../select/select.component";
-import { DateComponent } from "../date/date.component";
-import { RadiobuttonComponent } from "../radiobutton/radiobutton.component";
-import { CheckboxComponent } from "../checkbox/checkbox.component";
+import { FieldConfig } from "../components/forms/field.interface";
+import { InputComponent } from "../form-components/input.component";
+import { ButtonComponent } from "../form-components/button.component";
+import { SelectComponent } from "../form-components/select.component";
+import { DateComponent } from "../form-components/date.component";
+import { RadiobuttonComponent } from "../form-components/radiobutton.component";
+import { CheckboxComponent } from "../form-components/checkbox.component";
 
 const componentMapper = {
   input: InputComponent,

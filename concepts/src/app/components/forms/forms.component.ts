@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
 import {Hero} from './hero';
-import {forbiddenNameValidator} from '../directives/forbidden-name.directive';
+import {forbiddenNameValidator} from '../../directives/forbidden-name.directive';
 
 @Component({
   selector: 'app-forms',

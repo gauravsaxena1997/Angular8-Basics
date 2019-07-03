@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {BindingComponent} from './binding/binding.component';
-import {UserInputComponent} from './user-input/user-input.component';
-import {LifecycleHooksComponent} from './lifecycle-hooks/lifecycle-hooks.component';
-import {CustomDirectivesComponent} from './custom-directives/custom-directives.component';
-import {PipesComponent} from './pipes/pipes.component';
-import {FormsComponent} from './forms/forms.component';
+import {BindingComponent} from './components/binding/binding.component';
+import {UserInputComponent} from './components/user-input/user-input.component';
+import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-hooks.component';
+import {CustomDirectivesComponent} from './components/custom-directives/custom-directives.component';
+import {PipesComponent} from './components/pipes/pipes.component';
+import {FormsComponent} from './components/forms/forms.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},

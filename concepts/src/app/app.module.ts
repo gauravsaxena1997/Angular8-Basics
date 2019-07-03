@@ -1,32 +1,36 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import {MaterialModule} from './modules/material-ui/material-ui.module';
-import { BindingComponent } from './binding/binding.component';
-import { ChildComponent } from './child/child.component';
-import { UserInputComponent } from './user-input/user-input.component';
-import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
-import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-hooks-child.component';
+// Components
+import { AppComponent } from './app.component';
+import { BindingComponent } from './components/binding/binding.component';
+import { ChildComponent } from './components/child/child.component';
+import { UserInputComponent } from './components/user-input/user-input.component';
+import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle-hooks.component';
+import { LifecycleHooksChildComponent } from './components/lifecycle-hooks-child/lifecycle-hooks-child.component';
+import { CustomDirectivesComponent } from './components/custom-directives/custom-directives.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { FormsComponent } from './components/forms/forms.component';
+import { DynamicReactiveFormComponent } from './components/dynamic-reactive-form/dynamic-reactive-form.component';
+// Form Components
+import { InputComponent } from './form-components/input.component';
+import { ButtonComponent } from './form-components/button.component';
+import { SelectComponent } from './form-components/select.component';
+import { DateComponent } from './form-components/date.component';
+import { RadiobuttonComponent } from './form-components/radiobutton.component';
+import { CheckboxComponent } from './form-components/checkbox.component';
+import { CreateDynamicFormComponent } from './form-components/create-dynamic-form.component';
+// Directives
+import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
+import { DynamicFieldDirective } from './directives/dynamic-field.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
-import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
-import { PipesComponent } from './pipes/pipes.component';
-import { ExponentialPipe } from './pipes/exponential.pipe';
-import { FormsComponent } from './forms/forms.component';
-import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
-import { InputComponent } from './components/input/input.component';
-import { ButtonComponent } from './components/button/button.component';
-import { SelectComponent } from './components/select/select.component';
-import { DateComponent } from './components/date/date.component';
-import { RadiobuttonComponent } from './components/radiobutton/radiobutton.component';
-import { CheckboxComponent } from './components/checkbox/checkbox.component';
-import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-import { DynamicReactiveFormComponent } from './dynamic-reactive-form/dynamic-reactive-form.component';
+// Pipe
+import { ExponentialPipe } from './components/pipes/exponential.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,7 @@ import { DynamicReactiveFormComponent } from './dynamic-reactive-form/dynamic-re
     RadiobuttonComponent,
     CheckboxComponent,
     DynamicFieldDirective,
-    DynamicFormComponent,
+    CreateDynamicFormComponent,
     DynamicReactiveFormComponent
   ],
   imports: [

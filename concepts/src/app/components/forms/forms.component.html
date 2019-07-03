@@ -1,5 +1,6 @@
 <div class="container">
   <mat-tab-group>
+    <!-- ----------------------Reactive Forms-------------------------->
       <mat-tab label="Reactive Forms"> 
           <h2> From Control </h2>
           <mat-form-field >
@@ -7,7 +8,7 @@
           </mat-form-field> 
           <button mat-stroked-button color="primary" 
                   (click)="updateName()"
-                  [style.margin-left]="'20px'" >Update name</button>
+                  [style.margin-left]="'20px'">Update name</button>
           <p *ngIf="name.value">Value using interpolation: {{name.value}}</p>
           <hr>
           <h2> From Group </h2>
@@ -63,7 +64,7 @@
             <button mat-stroked-button color="primary" type="reset" class="gap">Reset</button>
           </form>
       </mat-tab>
-      <!-- ---------------------------------------------------- -->
+      <!-- -----------Template-driven Forms------------------------- -->
       <mat-tab label="Template-driven Forms">  
           <h2 class="headings">Apply for a job</h2>
           <div *ngIf="!isSubmitted">
@@ -105,6 +106,7 @@
             <div class="btn btn-primary" (click)="isSubmitted=!isSubmitted" >Apply another job</div>
           </div>
       </mat-tab>
+      <!-- Dynamic forms--------------- -->
       <mat-tab label="Dynamic Forms">
           <app-dynamic-reactive-form></app-dynamic-reactive-form>
       </mat-tab>

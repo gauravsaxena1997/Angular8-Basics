@@ -1,7 +1,7 @@
 import { Component, ViewChild} from "@angular/core";
 import { Validators } from "@angular/forms";
 import { FieldConfig } from "../forms/field.interface";
-import { DynamicFormComponent } from "../components/dynamic-form/dynamic-form.component";
+import { CreateDynamicFormComponent } from "../../form-components/create-dynamic-form.component";
 
 @Component({
   selector: 'app-dynamic-reactive-form',
@@ -9,7 +9,7 @@ import { DynamicFormComponent } from "../components/dynamic-form/dynamic-form.co
   styleUrls: ['./dynamic-reactive-form.component.css']
 })
 export class DynamicReactiveFormComponent {
-  @ViewChild(DynamicFormComponent, {static: true}) form: DynamicFormComponent;
+  @ViewChild(CreateDynamicFormComponent, {static: true}) form: CreateDynamicFormComponent;
   regConfig: FieldConfig[] = [
     {
       type: "input",
