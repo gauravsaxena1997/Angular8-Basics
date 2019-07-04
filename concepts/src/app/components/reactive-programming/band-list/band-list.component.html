@@ -1,0 +1,28 @@
+<div class="row" *ngIf="model$|async as model">
+    <button type="button" class="btn btn-primary mt-2 mb-2" [disabled]="model.isLoading" (click)="refreshDataClickSubject.next()">
+    Refresh data
+    </button>  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Formation year</th>
+                <th>Is active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="model.isLoading">
+                <td  colspan="3" style="text-align: center">
+                    <img src="../../../assets/loading.gif" alt="Loading..." height="150px" width="150px">                  
+                </td>
+            </tr>
+            <tr *ngFor="let band of model.bands">
+                <td>{{ band.name }}</td>
+                <td>{{ band.formationYear }}</td>
+                <td>{{ band.isActive }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

@@ -16,6 +16,7 @@ import { CustomDirectivesComponent } from './components/custom-directives/custom
 import { PipesComponent } from './components/pipes/pipes.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { DynamicReactiveFormComponent } from './components/dynamic-reactive-form/dynamic-reactive-form.component';
+import { BandListComponent } from './components/reactive-programming/band-list/band-list.component';
 // Form Components
 import { InputComponent } from './form-components/input.component';
 import { ButtonComponent } from './form-components/button.component';
@@ -64,7 +65,8 @@ import {BandDataService} from './components/reactive-programming/band-data.servi
     DynamicFormsComponent,
     DynamicTemplateDrivenFormComponent,
     AdvancedComponent,
-    ReactiveProgrammingComponent
+    ReactiveProgrammingComponent,
+    BandListComponent
   ],
   imports: [
     BrowserModule,

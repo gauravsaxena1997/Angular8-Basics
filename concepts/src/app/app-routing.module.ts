@@ -9,6 +9,7 @@ import {FormsComponent} from './components/forms/forms.component';
 import {DynamicFormsComponent} from './components/dynamic-forms/dynamic-forms.component';
 import {AdvancedComponent} from './components/advanced/advanced.component';
 import {ReactiveProgrammingComponent} from './components/reactive-programming/reactive-programming.component';
+import {BandListComponent} from './components/reactive-programming/band-list/band-list.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'forms',component:FormsComponent},
   {path:'dynamicforms',component:DynamicFormsComponent},
   {path:'advanced',component:AdvancedComponent},
-  {path:'reactive-programming',component:ReactiveProgrammingComponent}
+  {path:'reactive-programming',component:ReactiveProgrammingComponent,
+      children:[{path:'bands',component:BandListComponent}]},
 ];
 
 @NgModule({
