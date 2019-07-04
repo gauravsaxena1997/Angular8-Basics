@@ -1,10 +1,18 @@
-<mat-toolbar color="primary" [style.margin]="'0'">
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/binding']">Binding</a>
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/userinput']">User input</a>
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/lifecyclehooks']">Lifecycle Hooks</a>
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/customdirectives']">Custom Directives</a>
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/pipes']">Pipes</a>
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/forms']">Forms</a>
-    <a [ngStyle]="toolbar" class="nav-links" [routerLink]="['/dynamicforms']">Dynamic Forms</a>
-</mat-toolbar>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Concepts</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/binding']">Binding</a>
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/userinput']">User input</a>
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/lifecyclehooks']">Lifecycle Hooks</a>
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/customdirectives']">Custom Directives</a>
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/pipes']">Pipes</a>
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/forms']">Forms</a>
+        <a [ngStyle]="toolbar" class="nav-item nav-links" [routerLink]="['/dynamicforms']">Dynamic Forms</a>
+      </div>
+    </div>
+  </nav>
 <router-outlet></router-outlet>

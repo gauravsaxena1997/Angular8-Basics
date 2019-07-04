@@ -32,6 +32,7 @@ import { UnlessDirective } from './directives/unless.directive';
 // Pipe
 import { ExponentialPipe } from './components/pipes/exponential.pipe';
 import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.component';
+import { DynamicTemplateDrivenFormComponent } from './components/dynamic-template-driven-form/dynamic-template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.
     DynamicFieldDirective,
     CreateDynamicFormComponent,
     DynamicReactiveFormComponent,
-    DynamicFormsComponent
+    DynamicFormsComponent,
+    DynamicTemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
