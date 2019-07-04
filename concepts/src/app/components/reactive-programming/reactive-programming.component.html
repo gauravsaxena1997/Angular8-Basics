@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <h2>Bands</h2>
     <div class="row">
-        <table class="table">
+        <table class="table" *ngIf="bandList$|async as bandList else loading">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -41,3 +41,7 @@
     <button type="submit" class="btn btn-primary" (click)="bandForm.reset()">Reset</button>
   </form>
 </div>
+
+<ng-template #loading>
+  Loading..
+</ng-template>

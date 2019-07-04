@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BandDataService } from './band-data.service';
 import { Band } from './model';
-import { interval } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-programming',
@@ -12,20 +12,11 @@ import { interval } from 'rxjs';
   styleUrls: ['./reactive-programming.component.css']
 })
 export class ReactiveProgrammingComponent implements OnInit {
-  bandList:Band[];
+  bandList$:Observable<Band[]>;
   bandForm: FormGroup;
   readonly localStorageKey = 'band-crate-snapshot';
   constructor(fb: FormBuilder,private bandDataService: BandDataService) {
-    const obs = interval(1000).pipe(
-      map(val=>val*val),
-      filter(val=>val%2==0)
-    );
-    obs.subscribe(
-      (val)=> console.log(val)
-    )
-    this.bandDataService.getBands().subscribe(bands => {
-      this.bandList = bands;
-    });
+    this.bandList$ = this.bandDataService.getBands();
     
     const currentYear = new Date().getFullYear();
     this.bandForm = fb.group({
