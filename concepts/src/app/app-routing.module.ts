@@ -7,6 +7,8 @@ import {CustomDirectivesComponent} from './components/custom-directives/custom-d
 import {PipesComponent} from './components/pipes/pipes.component';
 import {FormsComponent} from './components/forms/forms.component';
 import {DynamicFormsComponent} from './components/dynamic-forms/dynamic-forms.component';
+import {AdvancedComponent} from './components/advanced/advanced.component';
+import {ReactiveProgrammingComponent} from './components/reactive-programming/reactive-programming.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path:'customdirectives',component:CustomDirectivesComponent},
   {path:'pipes',component:PipesComponent},
   {path:'forms',component:FormsComponent},
-  {path:'dynamicforms',component:DynamicFormsComponent}
+  {path:'dynamicforms',component:DynamicFormsComponent},
+  {path:'advanced',component:AdvancedComponent},
+  {path:'reactive-programming',component:ReactiveProgrammingComponent}
 ];
 
 @NgModule({

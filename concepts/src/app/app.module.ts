@@ -33,7 +33,10 @@ import { UnlessDirective } from './directives/unless.directive';
 import { ExponentialPipe } from './components/pipes/exponential.pipe';
 import { DynamicFormsComponent } from './components/dynamic-forms/dynamic-forms.component';
 import { DynamicTemplateDrivenFormComponent } from './components/dynamic-template-driven-form/dynamic-template-driven-form.component';
-
+import { AdvancedComponent } from './components/advanced/advanced.component';
+import { ReactiveProgrammingComponent } from './components/reactive-programming/reactive-programming.component';
+// Service
+import {BandDataService} from './components/reactive-programming/band-data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +62,9 @@ import { DynamicTemplateDrivenFormComponent } from './components/dynamic-templat
     CreateDynamicFormComponent,
     DynamicReactiveFormComponent,
     DynamicFormsComponent,
-    DynamicTemplateDrivenFormComponent
+    DynamicTemplateDrivenFormComponent,
+    AdvancedComponent,
+    ReactiveProgrammingComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +82,7 @@ import { DynamicTemplateDrivenFormComponent } from './components/dynamic-templat
     RadiobuttonComponent,
     CheckboxComponent
   ],
-  providers: [],
+  providers: [BandDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
