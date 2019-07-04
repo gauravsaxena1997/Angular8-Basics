@@ -1,7 +1,10 @@
 <div class="container mt-4">
     <h2>Bands</h2>
-    <div class="row">
-        <table class="table" *ngIf="bandList$|async as bandList else loading">
+    <div class="row" *ngIf="model$|async as model">
+      <button type="button" class="btn btn-primary mt-2 mb-2" [disabled]="model.isLoading" (click)="refreshDataClickSubject.next()">
+        Refresh data
+      </button>  
+      <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -10,7 +13,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let band of bandList">
+                <tr *ngIf="model.isLoading">
+                  <td  colspan="3" style="text-align: center">
+                      <img src="../../../assets/loading.gif" alt="Loading..." height="150px" width="150px">                  
+                  </td>
+                </tr>
+                <tr *ngFor="let band of model.bands">
                     <td>{{ band.name }}</td>
                     <td>{{ band.formationYear }}</td>
                     <td>{{ band.isActive }}</td>
@@ -36,12 +44,8 @@
       <label for="biography">Biography</label>
       <textarea class="form-control" id="biography" rows="3" formControlName="biography"></textarea>
     </div>
-    <!-- <button type="button" class="btn">Undo</button>
-    <button type="submit" class="btn btn-primary">Add</button> -->
+    <button type="button" class="btn" (click)="undoClick$.next()">Undo</button>
+    <!-- <button type="submit" class="btn btn-primary">Add</button> -->
     <button type="submit" class="btn btn-primary" (click)="bandForm.reset()">Reset</button>
   </form>
 </div>
-
-<ng-template #loading>
-  Loading..
-</ng-template>
