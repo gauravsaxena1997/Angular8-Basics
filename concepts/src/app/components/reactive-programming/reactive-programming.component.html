@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Reactive bands</h1>
+    <h1 routerLink="/reactive-programming/bands">Reactive bands</h1>
     <mat-form-field>
         <!-- <mat-label>Favorite food</mat-label> -->
         <mat-select [(value)]="selected">
@@ -10,30 +10,9 @@
         </mat-select>
       </mat-form-field>
 
+      <button class="ml-4" routerLink="/reactive-programming/band-create" mat-button color="primary">Add Band</button>
+
     <router-outlet></router-outlet>
-
-    <form [formGroup]="bandForm" *ngIf="false">
-        <div class="form-group">
-          <label for="Name">Name</label>
-          <input type="text" class="form-control" id="name" formControlName="name">
-        </div>
-        <div class="form-group">
-          <label for="formationYear">Formation year</label>
-          <input type="number" class="form-control" id="formationYear" formControlName="formationYear">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="isActive" formControlName="isActive">
-          <label class="form-check-label" for="isActive">Is active</label>
-        </div>
-        <div class="form-group">
-          <label for="biography">Biography</label>
-          <textarea class="form-control" id="biography" rows="3" formControlName="biography"></textarea>
-        </div>
-        <button type="button" class="btn">Undo</button>
-        <button type="submit" class="btn btn-primary ml-3">Add</button>
-        <button type="submit" class="btn btn-primary ml-3" (click)="bandForm.reset()">Reset</button>
-    </form>
-
 </div>
 
 

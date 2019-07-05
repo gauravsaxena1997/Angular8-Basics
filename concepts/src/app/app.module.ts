@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {ToastrModule} from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import {MaterialModule} from './modules/material-ui/material-ui.module';
 // Components
@@ -40,6 +41,7 @@ import { ReactiveProgrammingComponent } from './components/reactive-programming/
 import {BandDataService} from './components/reactive-programming/band-data.service';
 import {UserDataService} from './components/reactive-programming/user-data.service';
 import { BandSearchComponent } from './components/reactive-programming/band-search/band-search.component';
+import { BandCreateComponent } from './components/reactive-programming/band-create/band-create.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +71,8 @@ import { BandSearchComponent } from './components/reactive-programming/band-sear
     AdvancedComponent,
     ReactiveProgrammingComponent,
     BandListComponent,
-    BandSearchComponent
+    BandSearchComponent,
+    BandCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { BandSearchComponent } from './components/reactive-programming/band-sear
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot()
   ],
   entryComponents: [
     InputComponent,

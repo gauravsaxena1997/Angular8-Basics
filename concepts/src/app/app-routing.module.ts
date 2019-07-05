@@ -11,6 +11,7 @@ import {AdvancedComponent} from './components/advanced/advanced.component';
 import {ReactiveProgrammingComponent} from './components/reactive-programming/reactive-programming.component';
 import {BandListComponent} from './components/reactive-programming/band-list/band-list.component';
 import { BandSearchComponent } from './components/reactive-programming/band-search/band-search.component';
+import { BandCreateComponent } from './components/reactive-programming/band-create/band-create.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'advanced',component:AdvancedComponent},
   {path:'reactive-programming',component:ReactiveProgrammingComponent,
       children:[{path:'bands',component:BandListComponent},
-                {path:'band-search',component:BandSearchComponent}
+                {path:'band-search',component:BandSearchComponent},
+                {path:'band-create',component:BandCreateComponent}
     ]},
 ];
 

@@ -1,6 +1,7 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { debounceTime } from 'rxjs/operators';
+import { bufferTime } from 'rxjs/operators';
+import { BandDataService } from './band-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reactive-programming',
@@ -9,33 +10,18 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ReactiveProgrammingComponent {
   selected: string = 'All';
-  bandForm: FormGroup;
   readonly localStorageKey = 'band-crate-snapshot';
-  constructor(fb: FormBuilder) {
+  constructor(banddataservive: BandDataService,
+              toastr: ToastrService ) {
 
-    const currentYear = new Date().getFullYear();
-    this.bandForm = fb.group({
-      name: ['', Validators.required],
-      formationYear: [currentYear, Validators.max(currentYear)],
-      isActive: false,
-      biography: ''
-    });
-
-    this.bandForm.valueChanges.pipe(
-      debounceTime(500)
-    ).subscribe(formState => {
-      localStorage.setItem(this.localStorageKey, JSON.stringify(formState));
-    });
+    banddataservive.getUpdates().pipe(
+      bufferTime(30000),
+    ).subscribe(
+      bands=>{
+        const bandNames = bands.map(b=> b.name).join(', ');
+        toastr.info(`Following bands are updated: ${bandNames}`);
+    })
   }
-
-  ngOnInit(): void {
-    const formStateSerialized = localStorage.getItem(this.localStorageKey);
-    if (formStateSerialized !== null) {
-      const formState = JSON.parse(formStateSerialized);
-      this.bandForm.setValue(formState);
-    }
-  }
-
 }
 
 

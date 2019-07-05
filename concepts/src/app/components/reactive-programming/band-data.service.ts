@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { delay, tap } from 'rxjs/operators';
+import { of, Observable, interval } from 'rxjs';
+import { delay, tap, map } from 'rxjs/operators';
 import { Band } from './model';
 
 @Injectable()
@@ -64,6 +64,13 @@ export class BandDataService {
     band.isActive = isActive;
     return of({ ...band }).pipe(
       delay(1000)
+    );
+  }
+
+  getUpdates(): Observable<Band> {
+    return interval(10000).pipe(
+      map(() => this.bands[Math.floor(Math.random() * this.bands.length)]),
+      tap(band => console.log(`Received update for ${band.name}`))
     );
   }
 
