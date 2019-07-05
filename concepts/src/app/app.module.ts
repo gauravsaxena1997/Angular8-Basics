@@ -39,6 +39,7 @@ import { ReactiveProgrammingComponent } from './components/reactive-programming/
 // Service
 import {BandDataService} from './components/reactive-programming/band-data.service';
 import {UserDataService} from './components/reactive-programming/user-data.service';
+import { BandSearchComponent } from './components/reactive-programming/band-search/band-search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import {UserDataService} from './components/reactive-programming/user-data.servi
     DynamicTemplateDrivenFormComponent,
     AdvancedComponent,
     ReactiveProgrammingComponent,
-    BandListComponent
+    BandListComponent,
+    BandSearchComponent
   ],
   imports: [
     BrowserModule,

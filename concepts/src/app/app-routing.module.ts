@@ -10,6 +10,7 @@ import {DynamicFormsComponent} from './components/dynamic-forms/dynamic-forms.co
 import {AdvancedComponent} from './components/advanced/advanced.component';
 import {ReactiveProgrammingComponent} from './components/reactive-programming/reactive-programming.component';
 import {BandListComponent} from './components/reactive-programming/band-list/band-list.component';
+import { BandSearchComponent } from './components/reactive-programming/band-search/band-search.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/binding',pathMatch:'full'},
@@ -22,7 +23,9 @@ const routes: Routes = [
   {path:'dynamicforms',component:DynamicFormsComponent},
   {path:'advanced',component:AdvancedComponent},
   {path:'reactive-programming',component:ReactiveProgrammingComponent,
-      children:[{path:'bands',component:BandListComponent}]},
+      children:[{path:'bands',component:BandListComponent},
+                {path:'band-search',component:BandSearchComponent}
+    ]},
 ];
 
 @NgModule({

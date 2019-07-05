@@ -8,6 +8,7 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./reactive-programming.component.css']
 })
 export class ReactiveProgrammingComponent {
+  selected: string = 'All';
   bandForm: FormGroup;
   readonly localStorageKey = 'band-crate-snapshot';
   constructor(fb: FormBuilder) {

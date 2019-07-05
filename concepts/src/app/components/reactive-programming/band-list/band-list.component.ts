@@ -26,7 +26,7 @@ export class BandListComponent {
     const refreshDataClick$ = this.refreshDataClickSubject.asObservable();
     const refreshTrigger$ = refreshDataClick$.pipe(
       startWith({}),
-      combineLatest(activatedRoute.queryParams),
+      combineLatest(this.activatedRoute.queryParams),
       map(([_, params]) => {
         if (params.active === undefined) return undefined;
         return params.active === "true";

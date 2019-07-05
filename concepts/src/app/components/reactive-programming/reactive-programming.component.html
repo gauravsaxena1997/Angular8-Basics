@@ -1,14 +1,18 @@
 <div class="container">
     <h1>Reactive bands</h1>
-    <ul>
-        <li routerLink="/reactive-programming/bands" [queryParams]="{ active: true }">Active</li>
-        <li routerLink="/reactive-programming/bands" [queryParams]="{ active: false }">Inactive</li>
-        <li routerLink="/reactive-programming/bands">All</li>
-    </ul>
+    <mat-form-field>
+        <!-- <mat-label>Favorite food</mat-label> -->
+        <mat-select [(value)]="selected">
+          <mat-option routerLink="/reactive-programming/bands" [queryParams]="{ active: true }" value="Active"> Active </mat-option>
+          <mat-option routerLink="/reactive-programming/bands" [queryParams]="{ active: false }" value="Inactive"> Inactive </mat-option>
+          <mat-option routerLink="/reactive-programming/bands" value="All"> All </mat-option>
+          <mat-option routerLink="/reactive-programming/band-search" value="Search"> Search </mat-option>
+        </mat-select>
+      </mat-form-field>
+
     <router-outlet></router-outlet>
 
-
-    <form [formGroup]="bandForm">
+    <form [formGroup]="bandForm" *ngIf="false">
         <div class="form-group">
           <label for="Name">Name</label>
           <input type="text" class="form-control" id="name" formControlName="name">
