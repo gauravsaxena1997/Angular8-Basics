@@ -7,3 +7,7 @@ export interface Band {
     formationYear: number;
     isActive: boolean;
 }
+export interface User {
+    name: string;
+    favoriteBandId: GUID;
+}

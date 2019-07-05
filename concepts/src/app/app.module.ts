@@ -38,6 +38,7 @@ import { AdvancedComponent } from './components/advanced/advanced.component';
 import { ReactiveProgrammingComponent } from './components/reactive-programming/reactive-programming.component';
 // Service
 import {BandDataService} from './components/reactive-programming/band-data.service';
+import {UserDataService} from './components/reactive-programming/user-data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +85,7 @@ import {BandDataService} from './components/reactive-programming/band-data.servi
     RadiobuttonComponent,
     CheckboxComponent
   ],
-  providers: [BandDataService],
+  providers: [BandDataService, UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

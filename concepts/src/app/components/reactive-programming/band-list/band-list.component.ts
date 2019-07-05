@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable} from 'rxjs';
+import { Observable, forkJoin} from 'rxjs';
 import { Subject } from 'rxjs';
 import { map, mergeMap, startWith,combineLatest} from 'rxjs/operators';
 import { merge } from 'rxjs';
@@ -7,6 +7,7 @@ import { merge } from 'rxjs';
 import { BandDataService } from '../band-data.service';
 import { Band } from '../model';
 import { ActivatedRoute } from '@angular/router';
+import { UserDataService } from '../user-data.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class BandListComponent {
   model$: Observable<{ bands: Band[], isLoading: boolean }>;
   constructor(
       private bandDataService: BandDataService,
-      activatedRoute: ActivatedRoute
+      private activatedRoute: ActivatedRoute,
+      private userData: UserDataService
       ) {
     const refreshDataClick$ = this.refreshDataClickSubject.asObservable();
     const refreshTrigger$ = refreshDataClick$.pipe(
@@ -31,7 +33,15 @@ export class BandListComponent {
       })
     );
     const bandList$ = refreshTrigger$.pipe(
-      mergeMap((params) => this.bandDataService.getBands(params))
+      mergeMap((params) =>  forkJoin( 
+        this.bandDataService.getBands(params),
+        this.userData.currentUser
+      )),
+      map(([bands,userData])=>
+        bands.map(band=> band.id === userData.favoriteBandId
+          ? { ...band, favorite: true }
+          : band  )
+      )
     );
     this.model$ = merge(
       refreshTrigger$.pipe(map(() => ({ bands: [], isLoading: true }))),
